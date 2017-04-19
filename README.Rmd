@@ -4,7 +4,7 @@ output: rmarkdown::github_document
 
 `hgr` : Tools to Work with the 'Postlight' 'Mercury' 'API'
 
-Mercury takes any web article and returns only the relevant content — headline, author, body text, relevant images and more — free from any clutter.
+Mercury takes any web article and returns only the relevant content — headline, author, body text, relevant images and more — free from any clutter. You need an API key which you can get from [here](https://mercury.postlight.com).
 
 The following functions are implemented:
 

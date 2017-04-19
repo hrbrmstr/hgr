@@ -3,3 +3,4 @@
 export(just_the_facts)
 import(httr)
 import(purrr)
+importFrom(readr,type_convert)

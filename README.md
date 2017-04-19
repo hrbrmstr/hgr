@@ -1,7 +1,7 @@
 
 `hgr` : Tools to Work with the 'Postlight' 'Mercury' 'API'
 
-Mercury takes any web article and returns only the relevant content — headline, author, body text, relevant images and more — free from any clutter.
+Mercury takes any web article and returns only the relevant content — headline, author, body text, relevant images and more — free from any clutter. You need an API key which you can get from [here](https://mercury.postlight.com).
 
 The following functions are implemented:
 
@@ -35,7 +35,7 @@ dplyr::glimpse(just_the_facts(story))
     ## $ title          <chr> "Aircraft Carrier Wasn’t Sailing to Deter North Korea, as U.S. Suggested"
     ## $ content        <chr> "<div><article id=\"story\" class=\"story theme-main   \">\n\n    \n\n                      ...
     ## $ author         <chr> "Mark Landler and Eric Schmitt"
-    ## $ date_published <chr> "2017-04-18T17:57:41.000Z"
+    ## $ date_published <dttm> 2017-04-18 17:57:41
     ## $ lead_image_url <chr> "https://static01.nyt.com/images/2017/04/19/world/19carrier-sub/19carrier-sub-facebookJumbo....
     ## $ url            <chr> "https://www.nytimes.com/2017/04/18/world/asia/aircraft-carrier-north-korea-carl-vinson.html"
     ## $ domain         <chr> "www.nytimes.com"
@@ -54,7 +54,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Wed Apr 19 10:16:35 2017"
+    ## [1] "Wed Apr 19 10:26:14 2017"
 
 ``` r
 test_dir("tests/")

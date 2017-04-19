@@ -5,7 +5,7 @@ Version: 0.1.0
 Date: 2017-04-19
 Author: Bob Rudis (bob@rud.is)
 Maintainer: Bob Rudis <bob@rud.is>
-Description: PTools to Work with the 'Postlight' 'Mercury' 'API'.
+Description: PTools to Work with the 'Postlight' 'Mercury' 'API' <https://mercury.postlight.com>.
 URL: https://github.com/hrbrmstr/hgr
 BugReports: https://github.com/hrbrmstr/hgr/issues
 License: AGPL
@@ -16,5 +16,6 @@ Depends:
     R (>= 3.2.0)
 Imports:
     purrr,
-    httr
+    httr,
+    readr
 RoxygenNote: 6.0.1

@@ -19,7 +19,9 @@ just_the_facts <- function(url, mercury_api_key=Sys.getenv("MERCURY_API_KEY")) {
 
    res <- httr::content(res, as="text", encoding="UTF-8")
    res <- jsonlite::fromJSON(res, flatten=TRUE)
+   res <- purrr::flatten_df(res)
+   res <- readr::type_convert(res)
 
-   purrr::flatten_df(res)
+   res
 
 }
