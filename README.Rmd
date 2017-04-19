@@ -1,0 +1,47 @@
+---
+output: rmarkdown::github_document
+---
+
+`hgr` : Tools to Work with the 'Postlight' 'Mercury' 'API'
+
+Mercury takes any web article and returns only the relevant content — headline, author, body text, relevant images and more — free from any clutter.
+
+The following functions are implemented:
+
+- `just_the_facts`:	Retrieve parsed content of a URL processed by the Postlight Mercury API
+
+### Installation
+
+```{r eval=FALSE}
+devtools::install_github("hrbrmstr/hgr")
+```
+
+```{r message=FALSE, warning=FALSE, error=FALSE, include=FALSE}
+options(width=120)
+```
+
+### Usage
+
+```{r message=FALSE, warning=FALSE, error=FALSE}
+library(hgr)
+
+# current verison
+packageVersion("hgr")
+
+story <- "https://www.nytimes.com/2017/04/18/world/asia/aircraft-carrier-north-korea-carl-vinson.html?hp&action=click&pgtype=Homepage&clickSource=story-heading&module=first-column-region&region=top-news&WT.nav=top-news&_r=0"
+
+dplyr::glimpse(just_the_facts(story))
+
+```
+
+### Test Results
+
+```{r message=FALSE, warning=FALSE, error=FALSE}
+library(hgr)
+library(testthat)
+
+date()
+
+test_dir("tests/")
+```
+
