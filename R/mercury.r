@@ -12,6 +12,7 @@
 just_the_facts <- function(url, mercury_api_key=Sys.getenv("MERCURY_API_KEY")) {
 
    res <- httr::GET("https://mercury.postlight.com/parser",
+                    httr::content_type_json(),
                     httr::add_headers(`x-api-key`=mercury_api_key),
                     query = list(url = url))
 

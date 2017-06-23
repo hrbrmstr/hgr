@@ -6,6 +6,7 @@ Mercury takes any web article and returns only the relevant content — headline
 The following functions are implemented:
 
 -   `just_the_facts`: Retrieve parsed content of a URL processed by the Postlight Mercury API
+-   `clean_text`: Remove all HTML/XML tags from an HTML document/atomic character vector
 
 ### Installation
 
@@ -22,12 +23,14 @@ library(hgr)
 packageVersion("hgr")
 ```
 
-    ## [1] '0.1.0'
+    ## [1] '0.2.0'
 
 ``` r
 story <- "https://www.nytimes.com/2017/04/18/world/asia/aircraft-carrier-north-korea-carl-vinson.html?hp&action=click&pgtype=Homepage&clickSource=story-heading&module=first-column-region&region=top-news&WT.nav=top-news&_r=0"
 
-dplyr::glimpse(just_the_facts(story))
+doc <- just_the_facts(story)
+
+dplyr::glimpse(doc)
 ```
 
     ## Observations: 1
@@ -40,10 +43,24 @@ dplyr::glimpse(just_the_facts(story))
     ## $ url            <chr> "https://www.nytimes.com/2017/04/18/world/asia/aircraft-carrier-north-korea-carl-vinson.html"
     ## $ domain         <chr> "www.nytimes.com"
     ## $ excerpt        <chr> "The saga might never have come to light had the Navy not posted a photograph of the Carl Vi...
-    ## $ word_count     <int> 1505
+    ## $ word_count     <int> 1499
     ## $ direction      <chr> "ltr"
     ## $ total_pages    <int> 1
     ## $ rendered_pages <int> 1
+
+``` r
+substr(doc$content, 1, 100)
+```
+
+    ## [1] "<div><article id=\"story\" class=\"story theme-main   \">\n\n    \n\n                        \n    \n\n    \n\n  "
+
+``` r
+plain <- clean_text(doc$content)
+
+substr(plain, 1, 100)
+```
+
+    ## [1] "WASHINGTON — Just over a week ago, the White House declared that ordering an American aircraft carri"
 
 ### Test Results
 
@@ -54,7 +71,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Wed Apr 19 10:26:14 2017"
+    ## [1] "Thu Jun 22 22:49:32 2017"
 
 ``` r
 test_dir("tests/")

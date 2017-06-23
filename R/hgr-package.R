@@ -9,4 +9,7 @@
 #' @author Bob Rudis (bob@@rud.is)
 #' @import purrr httr
 #' @importFrom readr type_convert
+#' @import xslt
+#' @importFrom xml2 read_html
+#' @importFrom rvest html_text
 NULL

@@ -1,5 +1,7 @@
 ---
 output: rmarkdown::github_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 `hgr` : Tools to Work with the 'Postlight' 'Mercury' 'API'
@@ -9,6 +11,7 @@ Mercury takes any web article and returns only the relevant content — headline
 The following functions are implemented:
 
 - `just_the_facts`:	Retrieve parsed content of a URL processed by the Postlight Mercury API
+- `clean_text`:	Remove all HTML/XML tags from an HTML document/atomic character vector
 
 ### Installation
 
@@ -30,8 +33,15 @@ packageVersion("hgr")
 
 story <- "https://www.nytimes.com/2017/04/18/world/asia/aircraft-carrier-north-korea-carl-vinson.html?hp&action=click&pgtype=Homepage&clickSource=story-heading&module=first-column-region&region=top-news&WT.nav=top-news&_r=0"
 
-dplyr::glimpse(just_the_facts(story))
+doc <- just_the_facts(story)
 
+dplyr::glimpse(doc)
+
+substr(doc$content, 1, 100)
+
+plain <- clean_text(doc$content)
+
+substr(plain, 1, 100)
 ```
 
 ### Test Results

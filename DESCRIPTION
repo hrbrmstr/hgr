@@ -1,8 +1,8 @@
 Package: hgr
 Type: Package
 Title: Tools to Work with the 'Postlight' 'Mercury' 'API'
-Version: 0.1.0
-Date: 2017-04-19
+Version: 0.2.0
+Date: 2017-06-22
 Author: Bob Rudis (bob@rud.is)
 Maintainer: Bob Rudis <bob@rud.is>
 Description: PTools to Work with the 'Postlight' 'Mercury' 'API' <https://mercury.postlight.com>.
@@ -17,5 +17,8 @@ Depends:
 Imports:
     purrr,
     httr,
-    readr
+    readr,
+    xml2,
+    rvest,
+    xslt
 RoxygenNote: 6.0.1
