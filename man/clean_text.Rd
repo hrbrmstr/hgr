@@ -14,7 +14,7 @@ atomic character vector of cleaned text
 }
 \description{
 This is designed to be run on the \code{$content} component of the \code{data.frame} returned
-by \code{just_the_facts()}. It can be run on any \code{htmnl_document} or atomic character vectors
+by \code{just_the_facts()}. It can be run on any \code{html_document} or atomic character vectors
 (which it will parse into an \code{html_document}) and it will return an atomic character
 vector of only plain text (i.e. it will remove all tags).
 }

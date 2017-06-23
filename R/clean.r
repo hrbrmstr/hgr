@@ -1,7 +1,7 @@
 #' Remove all tags from a document
 #'
 #' This is designed to be run on the `$content` component of the `data.frame` returned
-#' by `just_the_facts()`. It can be run on any `htmnl_document` or atomic character vectors
+#' by `just_the_facts()`. It can be run on any `html_document` or atomic character vectors
 #' (which it will parse into an `html_document`) and it will return an atomic character
 #' vector of only plain text (i.e. it will remove all tags).
 #'
