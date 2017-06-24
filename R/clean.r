@@ -8,6 +8,9 @@
 #' @md
 #' @param doc atomic character vector (i.e. plain text) or an `html_document`
 #' @return atomic character vector of cleaned text
+#' @note the XSLT can be a bit aggressive for some URLs and this function will first
+#'     try the XSLT and test for an empty return. If that condition exists, then
+#'     it will revert to a plain text conversion with just straight `rvest::html_text()`.
 #' @export
 clean_text <- function(doc) {
 
@@ -15,10 +18,15 @@ clean_text <- function(doc) {
 
   cleaner <- xml2::read_xml(system.file("xslt/justthetext.xslt", package="hgr"))
 
-  doc <- xslt::xml_xslt(doc, cleaner)
-  doc <- rvest::html_text(doc)
-  doc <- trimws(doc)
+  doc_tmp <- xslt::xml_xslt(doc, cleaner)
+  doc_tmp <- rvest::html_text(doc_tmp)
+  doc_tmp <- trimws(doc_tmp)
 
-  doc
+  if (nchar(doc_tmp) == 0) {
+    doc_tmp <- rvest::html_text(doc)
+    doc_tmp <- trimws(doc_tmp)
+  }
+
+  doc_tmp
 
 }

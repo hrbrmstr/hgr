@@ -18,3 +18,8 @@ by \code{just_the_facts()}. It can be run on any \code{html_document} or atomic 
 (which it will parse into an \code{html_document}) and it will return an atomic character
 vector of only plain text (i.e. it will remove all tags).
 }
+\note{
+the XSLT can be a bit aggressive for some URLs and this function will first
+try the XSLT and test for an empty return. If that condition exists, then
+it will revert to a plain text conversion with just straight \code{rvest::html_text()}.
+}
