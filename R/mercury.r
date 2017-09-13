@@ -1,7 +1,8 @@
 #' Retrieve parsed content of a URL processed by the Postlight Mercury API
 #'
-#' Mercury takes any web article and returns only the relevant content — headline, author,
-#' body text, relevant images and more — free from any clutter.
+#' [Mercury](https://mercury.postlight.com) takes any web article and returns only the
+#' relevant content --- headline, author, body text, relevant images and more --- free
+#' from any clutter.
 #'
 #' @md
 #' @param url URL to retrieve
@@ -13,6 +14,7 @@ just_the_facts <- function(url, mercury_api_key=Sys.getenv("MERCURY_API_KEY")) {
 
    res <- httr::GET("https://mercury.postlight.com/parser",
                     httr::content_type_json(),
+                    httr::user_agent(.hgr_ua),
                     httr::add_headers(`x-api-key`=mercury_api_key),
                     query = list(url = url))
 
@@ -21,8 +23,20 @@ just_the_facts <- function(url, mercury_api_key=Sys.getenv("MERCURY_API_KEY")) {
    res <- httr::content(res, as="text", encoding="UTF-8")
    res <- jsonlite::fromJSON(res, flatten=TRUE)
    res <- purrr::flatten_df(res)
-   res <- readr::type_convert(res)
+   res <- readr::type_convert(res, col_types=.hgr_cols)
+
+   class(res) <- c("hgr")
 
    res
 
+}
+
+#' @md
+#' @rdname just_the_facts
+#' @param x `hgr` object
+#' @param ... unused
+#' @export
+print.hgr <- function(x, ...) {
+  tmp <- htmltools::HTML(x$content)
+  htmltools::html_print(tmp)
 }

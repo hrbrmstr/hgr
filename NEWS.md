@@ -1,3 +1,6 @@
+0.3.0
+* Enhanced "printing" of `hgr` objects (uses `htmltools::html_print()`)
+
 0.2.0
 * New `clean_text()` function which is designed to be run on the `$content` 
   component of the `data.frame` returned by `just_the_facts()`. It can be run

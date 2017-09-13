@@ -23,7 +23,7 @@ library(hgr)
 packageVersion("hgr")
 ```
 
-    ## [1] '0.2.0'
+    ## [1] '0.3.0'
 
 ``` r
 story <- "https://www.nytimes.com/2017/04/18/world/asia/aircraft-carrier-north-korea-carl-vinson.html?hp&action=click&pgtype=Homepage&clickSource=story-heading&module=first-column-region&region=top-news&WT.nav=top-news&_r=0"
@@ -33,20 +33,21 @@ doc <- just_the_facts(story)
 dplyr::glimpse(doc)
 ```
 
-    ## Observations: 1
-    ## Variables: 12
-    ## $ title          <chr> "Aircraft Carrier Wasn’t Sailing to Deter North Korea, as U.S. Suggested"
-    ## $ content        <chr> "<div><article id=\"story\" class=\"story theme-main   \">\n\n    \n\n                      ...
-    ## $ author         <chr> "Mark Landler and Eric Schmitt"
-    ## $ date_published <dttm> 2017-04-18 17:57:41
-    ## $ lead_image_url <chr> "https://static01.nyt.com/images/2017/04/19/world/19carrier-sub/19carrier-sub-facebookJumbo....
-    ## $ url            <chr> "https://www.nytimes.com/2017/04/18/world/asia/aircraft-carrier-north-korea-carl-vinson.html"
-    ## $ domain         <chr> "www.nytimes.com"
-    ## $ excerpt        <chr> "The saga might never have come to light had the Navy not posted a photograph of the Carl Vi...
-    ## $ word_count     <int> 1499
-    ## $ direction      <chr> "ltr"
-    ## $ total_pages    <int> 1
-    ## $ rendered_pages <int> 1
+    ## List of 12
+    ##  $ title         : chr "Aircraft Carrier Wasn’t Sailing to Deter North Korea, as U.S. Suggested"
+    ##  $ content       : chr "<div><article id=\"story\" class=\"story theme-main   \">\n\n    \n\n                        \n    \n\n    \n\n"| __truncated__
+    ##  $ author        : chr "Mark Landler and Eric Schmitt"
+    ##  $ date_published: POSIXct[1:1], format: "2017-04-18 17:57:41"
+    ##  $ lead_image_url: chr "https://static01.nyt.com/images/2017/04/19/world/19carrier-sub/19carrier-sub-facebookJumbo.jpg"
+    ##  $ url           : chr "https://www.nytimes.com/2017/04/18/world/asia/aircraft-carrier-north-korea-carl-vinson.html"
+    ##  $ domain        : chr "www.nytimes.com"
+    ##  $ excerpt       : chr "The saga might never have come to light had the Navy not posted a photograph of the Carl Vinson sailing through"| __truncated__
+    ##  $ word_count    : int 1499
+    ##  $ direction     : chr "ltr"
+    ##  $ total_pages   : int 1
+    ##  $ rendered_pages: int 1
+    ##  - attr(*, "row.names")= int 1
+    ##  - attr(*, "class")= chr "hgr"
 
 ``` r
 substr(doc$content, 1, 100)
@@ -71,7 +72,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Thu Jun 22 22:49:32 2017"
+    ## [1] "Wed Sep 13 14:41:50 2017"
 
 ``` r
 test_dir("tests/")

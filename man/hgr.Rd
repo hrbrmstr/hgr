@@ -6,8 +6,9 @@
 \alias{hgr-package}
 \title{Tools to Work with the 'Postlight' 'Mercury' 'API'}
 \description{
-\href{https://mercury.postlight.com}{Mercury} takes any web article and returns only the relevant content — headline, author,
-body text, relevant images and more — free from any clutter.
+\href{https://mercury.postlight.com}{Mercury} takes any web article and returns only the
+relevant content --- headline, author, body text, relevant images and more --- free
+from any clutter.
 }
 \author{
 Bob Rudis (bob@rud.is)

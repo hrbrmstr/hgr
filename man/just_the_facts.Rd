@@ -2,20 +2,28 @@
 % Please edit documentation in R/mercury.r
 \name{just_the_facts}
 \alias{just_the_facts}
+\alias{print.hgr}
 \title{Retrieve parsed content of a URL processed by the Postlight Mercury API}
 \usage{
 just_the_facts(url, mercury_api_key = Sys.getenv("MERCURY_API_KEY"))
+
+\method{print}{hgr}(x, ...)
 }
 \arguments{
 \item{url}{URL to retrieve}
 
 \item{mercury_api_key}{your Mercury API key. The function looks for it in \code{MERCURY_API_KEY}
 but you can specify it manually as well. Get your key \href{https://mercury.postlight.com}{here}.}
+
+\item{x}{\code{hgr} object}
+
+\item{...}{unused}
 }
 \value{
 \code{data.frame}
 }
 \description{
-Mercury takes any web article and returns only the relevant content — headline, author,
-body text, relevant images and more — free from any clutter.
+\href{https://mercury.postlight.com}{Mercury} takes any web article and returns only the
+relevant content --- headline, author, body text, relevant images and more --- free
+from any clutter.
 }

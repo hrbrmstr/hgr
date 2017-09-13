@@ -1,11 +1,13 @@
 Package: hgr
 Type: Package
 Title: Tools to Work with the 'Postlight' 'Mercury' 'API'
-Version: 0.2.0
+Version: 0.3.0
 Date: 2017-06-22
 Author: Bob Rudis (bob@rud.is)
 Maintainer: Bob Rudis <bob@rud.is>
-Description: PTools to Work with the 'Postlight' 'Mercury' 'API' <https://mercury.postlight.com>.
+Description: The 'Postlight' 'Mercury' 'API' <https://mercury.postlight.com> takes any web
+    article and returns only the relevant content - headline, author, body text, relevant 
+    images and more - free from any clutter.
 URL: https://github.com/hrbrmstr/hgr
 BugReports: https://github.com/hrbrmstr/hgr/issues
 License: AGPL
@@ -20,5 +22,8 @@ Imports:
     readr,
     xml2,
     rvest,
-    xslt
+    xslt,
+    clipr,
+    htmltools,
+    jsonlite
 RoxygenNote: 6.0.1
