@@ -5,7 +5,7 @@ jtf_addin <- function() {
 
   clip_txt <- trimws(clipr::read_clip())[1]
 
-  if (grepl("^http[s]://", clip_txt)) {
+  if (grepl("^http[s]*://", clip_txt)) {
 
     var_name <- temp_name()
 
