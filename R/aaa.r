@@ -11,3 +11,14 @@
 )
 
 .hgr_ua <- "hgr R package / github.com/hrbrmstr/hgr"
+
+temp_name = function(n = 4, avoid = ls()) {
+
+  tn = paste(sample(letters, n), collapse="")
+
+  while (tn %in% avoid) {
+    tn = paste(sample(letters, n), collapse="")
+  }
+
+  tn
+}

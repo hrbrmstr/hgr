@@ -1,0 +1,5 @@
+Name: Just The Facts
+Description: Takes a URL on the clipboard and inserts/executes a call to `just_the_facts()`
+    that includes "printing" the object which launches a browser with the API call result
+Binding: jtf_addin
+Interactive: false

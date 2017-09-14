@@ -2,11 +2,13 @@
 
 S3method(print,hgr)
 export(clean_text)
+export(jtf_addin)
 export(just_the_facts)
 import(clipr)
 import(htmltools)
 import(httr)
 import(purrr)
+import(rstudioapi)
 import(xslt)
 importFrom(jsonlite,fromJSON)
 importFrom(jsonlite,toJSON)

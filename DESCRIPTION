@@ -25,5 +25,6 @@ Imports:
     xslt,
     clipr,
     htmltools,
-    jsonlite
+    jsonlite,
+    rstudioapi
 RoxygenNote: 6.0.1

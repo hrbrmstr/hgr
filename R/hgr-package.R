@@ -11,7 +11,7 @@
 #' @import purrr httr clipr htmltools
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom readr type_convert cols col_character col_datetime
-#' @import xslt
+#' @import xslt rstudioapi
 #' @importFrom xml2 read_html
 #' @importFrom rvest html_text
 NULL
