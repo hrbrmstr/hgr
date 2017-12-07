@@ -12,6 +12,8 @@
 #'     try the XSLT and test for an empty return. If that condition exists, then
 #'     it will revert to a plain text conversion with just straight `rvest::html_text()`.
 #' @export
+#' @examples
+#' clean_text(system.file("extdata", "raw.html", package="hgr"))
 clean_text <- function(doc) {
 
   if (!inherits(doc, "html_document")) doc <- xml2::read_html(doc)

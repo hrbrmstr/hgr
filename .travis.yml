@@ -1,31 +1,42 @@
 language: r
 
 warnings_are_errors: true
-
-sudo: required
-
 cache: packages
+sudo: false
+r_check_revdep: false
 
-r:
- - oldrel
- - release
- - devel
+matrix:
+  include:
+    - r: oldrel
+      env: TRAVIS_CLIP=xsel DISPLAY=:99.0
+      addons: {apt: {packages: [xsel]}}
+    - r: release
+      env: TRAVIS_CLIP=xsel DISPLAY=:99.0
+      addons: {apt: {packages: [xsel]}}
+    - r: devel
+      env: TRAVIS_CLIP=xsel DISPLAY=:99.0
+      addons: {apt: {packages: [xsel]}}
+    - r: oldrel
+      env: TRAVIS_CLIP=xclip DISPLAY=:99.0
+      addons: {apt: {packages: [xclip]}}
+    - r: release
+      env: TRAVIS_CLIP=xclip DISPLAY=:99.0
+      addons: {apt: {packages: [xclip]}}
+    - r: devel
+      env: TRAVIS_CLIP=xclip DISPLAY=:99.0
+      addons: {apt: {packages: [xclip]}}
+    - r: release
+      env: TRAVIS_CLIP=none DISPLAY=:99.0
+    - r: release
+      env: TRAVIS_CLIP=nodisplay
+      addons: {apt: {packages: [xclip]}}
 
-apt_packages:
-  - libv8-dev
-  - xclip
-
-env:
- global:
-   - CRAN: http://cran.rstudio.com
+# Ensure xclip can still run headlessly
+before_script:
+  - sh -e /etc/init.d/xvfb start
+  - sleep 3
+- if [ "$TRAVIS_CLIP" == "xclip" ]; then uptime | xclip -i -sel p -f | xclip -i -sel c; xclip -o -sel clipboard; fi
 
 after_success:
   - Rscript -e 'covr::codecov()'
 
-notifications:
-  email:
-    - bob@rud.is
-  irc:
-    channels:
-      - "104.236.112.222#builds"
-    nick: travisci

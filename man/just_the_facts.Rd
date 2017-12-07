@@ -27,3 +27,9 @@ but you can specify it manually as well. Get your key \href{https://mercury.post
 relevant content --- headline, author, body text, relevant images and more --- free
 from any clutter.
 }
+\examples{
+\dontrun{
+URL <- "https://www.techworld.com/careers/what-is-r-programming-language-3664613/"
+just_the_facts(URL)
+}
+}

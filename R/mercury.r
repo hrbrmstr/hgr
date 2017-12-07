@@ -10,6 +10,10 @@
 #'     but you can specify it manually as well. Get your key [here](https://mercury.postlight.com).
 #' @return `data.frame`
 #' @export
+#' @examples \dontrun{
+#' URL <- "https://www.techworld.com/careers/what-is-r-programming-language-3664613/"
+#' just_the_facts(URL)
+#' }
 just_the_facts <- function(url, mercury_api_key=Sys.getenv("MERCURY_API_KEY")) {
 
    res <- httr::GET("https://mercury.postlight.com/parser",

@@ -10,6 +10,12 @@
 relevant content --- headline, author, body text, relevant images and more --- free
 from any clutter.
 }
+\details{
+Tools are provided to access the 'API' and also further clean up retrieved text
+through the the application of 'XSLT' style sheets. An 'RStudio' 'Addin' is also
+provided which makes it possible to preview the cleaned content from a 'URL' on
+the clipboard.
+}
 \author{
 Bob Rudis (bob@rud.is)
 }

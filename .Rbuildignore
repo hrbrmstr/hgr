@@ -8,3 +8,6 @@
 ^\.codecov\.yml$
 ^README_files$
 ^doc$
+^appveyor\.yml$
+^CONDUCT\.md$
+^codecov\.yml$

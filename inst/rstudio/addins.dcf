@@ -3,3 +3,8 @@ Description: Takes a URL on the clipboard and inserts/executes a call to `just_t
     that includes "printing" the object which launches a browser with the API call result
 Binding: jtf_addin
 Interactive: false
+
+Name: Minimal Browser
+Description: Presents a "browser" interface
+Binding: mini_browser
+Interactive: true

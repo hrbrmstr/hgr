@@ -6,8 +6,12 @@ Date: 2017-06-22
 Author: Bob Rudis (bob@rud.is)
 Maintainer: Bob Rudis <bob@rud.is>
 Description: The 'Postlight' 'Mercury' 'API' <https://mercury.postlight.com> takes any web
-    article and returns only the relevant content - headline, author, body text, relevant 
-    images and more - free from any clutter.
+    article and returns only the relevant content - headline, author, body text,  
+    images and more - free from any clutter and including only minimal markup. Tools
+    are provided to access the 'API' and also further clean up retrieved text through
+    the the application of 'XSLT' style sheets. An 'RStudio' 'Addin' is also provided
+    which makes it possible to preview the cleaned content from a 'URL' on
+    the clipboard.
 URL: https://github.com/hrbrmstr/hgr
 BugReports: https://github.com/hrbrmstr/hgr/issues
 License: AGPL
@@ -26,5 +30,7 @@ Imports:
     clipr,
     htmltools,
     jsonlite,
-    rstudioapi
+    rstudioapi,
+    shiny (>= 0.13),
+    miniUI (>= 0.1.1)
 RoxygenNote: 6.0.1

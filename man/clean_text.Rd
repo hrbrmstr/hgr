@@ -23,3 +23,6 @@ the XSLT can be a bit aggressive for some URLs and this function will first
 try the XSLT and test for an empty return. If that condition exists, then
 it will revert to a plain text conversion with just straight \code{rvest::html_text()}.
 }
+\examples{
+clean_text(system.file("extdata", "raw.html", package="hgr"))
+}
